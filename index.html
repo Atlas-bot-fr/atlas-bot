@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta name="atlas-build" content="1792875586">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-c/4rvTMMx866ktcp3/V8zuZsE06RSDh/zrTCLY6EuwM=' 'sha256-8ctMdTW70UuBcvIM3tAvGotNMMltzCz9LKasG61r/hw='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https:; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://discord.com; frame-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<script>if(window.top!==window.self){document.documentElement.style.display='none';try{window.top.location=window.self.location}catch(e){}}</script>
+
+<script>window.atlasMotionOff=function(f){var c=document.documentElement.classList;if(c.contains('no-motion')||c.contains('a-off-'+f))return true;if(c.contains('force-motion'))return false;return window.matchMedia('(prefers-reduced-motion: reduce)').matches};try{var s=JSON.parse(localStorage.getItem('atlas-settings')||'{}'),c=document.documentElement.classList,a=s.anim||{};if(s.motion==='on')c.add('force-motion');if(s.motion==='off')c.add('no-motion');for(var k in a)if(a[k]===false)c.add('a-off-'+k);if(s.text&&s.text!=='md')c.add('t-'+s.text);if(s.blur===false)c.add('no-blur');if(s.notice===false)c.add('no-notice');if(s.contrast)c.add('hc');if(s.readable)c.add('readable')}catch(e){}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlas Bot</title>
+<meta name="description" content="Atlas Bot : modération, anti-raid, niveaux, tickets, giveaways et IA. Tout se règle avec /config sur Discord ou depuis le dashboard du site." data-i18n-attr="content:meta.desc">
+<meta name="theme-color" content="#020e0e">
+<meta property="og:title" content="Atlas Bot">
+<meta property="og:description" content="Le bot Discord qui règle tout ton serveur — The Discord bot that runs your whole server.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Atlas Bot">
+<link rel="preload" href="assets/fonts/chakra-petch-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/instrument-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css?v=1792875586">
+</head>
+<body data-title="meta.title">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#14c8c0"/><stop offset="1" stop-color="#6ee6a0"/></linearGradient><symbol id="mark" viewBox="120 120 500 500"><path fill="url(#ag)" fill-rule="evenodd" d="M523 482 L465 531 L463 537 L473 551 L564 596 L526 482Z M474 156 L365 138 L322 157 L260 336 L330 353 L367 248 L416 390 L224 352 L140 454 L168 595 L174 594 L266 535 L275 511 L273 506 L205 492 L177 571 L173 484 L195 473 L204 471 L443 522 L568 420 L595 342 L495 387 L491 385 L427 201Z"/></symbol><symbol id="g-config" viewBox="0 0 24 24"><g fill="url(#ag)"><path d="M3 5.5h18v2H3zM3 11h18v2H3zM3 16.5h18v2H3z" opacity=".3"/><path d="M13 3.5h4.2l-1 6H12zM6 9h4.2l-1 6H5zM15 14.5h4.2l-1 6H14z"/></g></symbol><symbol id="g-mod" viewBox="0 0 24 24"><g fill="url(#ag)"><path d="M12 2l8.5 3.2v6.1c0 5-3.6 8.9-8.5 10.7-4.9-1.8-8.5-5.7-8.5-10.7V5.2z"/><path d="M12 7l4.3 1.6v3.1c0 2.7-1.8 5-4.3 6.2-2.5-1.2-4.3-3.5-4.3-6.2V8.6z" fill="#04120f"/></g></symbol><symbol id="g-raid" viewBox="0 0 24 24"><g fill="url(#ag)"><path d="M12 2.5l10.5 18.5h-21z"/><path d="M11 9.5h2v5.5h-2zM11 16.8h2v2.2h-2z" fill="#04120f"/></g></symbol><symbol id="g-ia" viewBox="0 0 24 24"><g fill="url(#ag)"><path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5z"/></g></symbol><symbol id="g-lvl" viewBox="0 0 24 24"><g fill="url(#ag)"><path d="M3 21v-5.5h5.2V21zM9.4 21V10.5h5.2V21zM15.8 21V4h5.2v17z"/></g></symbol><symbol id="g-tix" viewBox="0 0 24 24"><g fill="url(#ag)"><path d="M2.5 6h19v4.2a1.9 1.9 0 000 3.6V18h-19v-4.2a1.9 1.9 0 000-3.6z"/><path d="M14.2 6h1.6v12h-1.6z" fill="#04120f" opacity=".5"/></g></symbol><symbol id="g-gw" viewBox="0 0 24 24"><g fill="url(#ag)"><path d="M3 9h18v4.2H3zM4.2 14.2h15.6V21H4.2z"/><path d="M11 9h2v12h-2z" fill="#04120f" opacity=".45"/><path d="M12 9C8.8 9 6.6 6 8.6 4.3S12 6.6 12 9zM12 9c3.2 0 5.4-3 3.4-4.7S12 6.6 12 9z"/></g></symbol><symbol id="g-eco" viewBox="0 0 24 24"><g fill="url(#ag)"><path d="M12 2l8.5 5v10L12 22l-8.5-5V7z"/><path d="M12 7l4.4 2.5v5L12 17l-4.4-2.5v-5z" fill="#04120f" opacity=".55"/></g></symbol><symbol id="g-wel" viewBox="0 0 24 24"><g fill="url(#ag)"><path d="M10 3h11v18H10v-3h8V6h-8z"/><path d="M2.5 10.5H9V7l6.5 5L9 17v-3.5H2.5z"/></g></symbol><symbol id="g-pub" viewBox="0 0 24 24"><g fill="url(#ag)"><path d="M2.5 9.5L14 4v16L2.5 14.5z"/><path d="M16 8l5.5-2v12L16 16z"/><path d="M5 15.5l2 5.5h3.2l-1.6-5.3z"/></g></symbol><symbol id="g-fun" viewBox="0 0 24 24"><g fill="url(#ag)"><path d="M12 2l9 5-9 5-9-5z"/><path d="M3 8.7l8.2 4.6V22L3 17.4z" opacity=".72"/><path d="M21 8.7l-8.2 4.6V22l8.2-4.6z" opacity=".5"/></g></symbol></defs></svg>
+<nav class="skipnav" data-i18n-attr="aria-label:nav.quick"><a class="skip" href="#" data-skip data-i18n="a11y.skip">Aller au contenu</a></nav>
+<aside class="sidebar" id="sidebar" data-i18n-attr="aria-label:nav.side">
+  <a class="brand sb-brand" href="#"><svg aria-hidden="true"><use href="#mark"/></svg><span>Atlas Bot</span></a>
+  <nav class="nav-links" id="nav-links" data-i18n-attr="aria-label:nav.main">
+    <a class="sb-cat" href="#cat/discover" data-i18n-attr="title:cat.discover.t"><span class="ico" aria-hidden="true">🧭</span><span class="lbl" data-i18n="cat.discover.t">Découvrir</span></a>
+        <a class="sb-sub" href="#features" data-i18n-attr="title:nav.features"><span class="ico" aria-hidden="true">✨</span><span class="lbl" data-i18n="nav.features">Fonctionnalités</span></a>
+        <a class="sb-sub" href="#commands" data-i18n-attr="title:nav.commands"><span class="ico" aria-hidden="true">⌨️</span><span class="lbl" data-i18n="nav.commands">Commandes</span></a>
+        <a class="sb-sub" href="#guide" data-i18n-attr="title:nav.guide"><span class="ico" aria-hidden="true">📖</span><span class="lbl" data-i18n="nav.guide">Guide</span></a>
+        <a class="sb-sub" href="#news" data-i18n-attr="title:nav.news"><span class="ico" aria-hidden="true">📰</span><span class="lbl" data-i18n="nav.news">Nouveautés</span></a>
+    <a class="sb-cat" href="#cat/server" data-i18n-attr="title:cat.server.t"><span class="ico" aria-hidden="true">🎛️</span><span class="lbl" data-i18n="cat.server.t">Mon serveur</span></a>
+        <a class="sb-sub" href="#dashboard" data-i18n-attr="title:nav.dashboard"><span class="ico" aria-hidden="true">🎛️</span><span class="lbl" data-i18n="nav.dashboard">Dashboard</span></a>
+        <a class="sb-sub" href="#badges" data-i18n-attr="title:nav.badges"><span class="ico" aria-hidden="true">🎖️</span><span class="lbl" data-i18n="nav.badges">Badges</span></a>
+    <a class="sb-cat" href="#cat/community" data-i18n-attr="title:cat.community.t"><span class="ico" aria-hidden="true">🌐</span><span class="lbl" data-i18n="cat.community.t">Communauté</span></a>
+        <a class="sb-sub" href="#pub" data-i18n-attr="title:nav.pub"><span class="ico" aria-hidden="true">📣</span><span class="lbl" data-i18n="nav.pub">Pub</span></a>
+        <a class="sb-sub" href="#partners" data-i18n-attr="title:nav.partners"><span class="ico" aria-hidden="true">🤝</span><span class="lbl" data-i18n="nav.partners">Partenariats</span></a>
+        <a class="sb-sub" href="#events" data-i18n-attr="title:nav.events"><span class="ico" aria-hidden="true">🏆</span><span class="lbl" data-i18n="nav.events">Évènements</span></a>
+    <a class="sb-cat" href="#cat/shops" data-i18n-attr="title:cat.shops.t"><span class="ico" aria-hidden="true">🛒</span><span class="lbl" data-i18n="cat.shops.t">Boutiques</span></a>
+        <a class="sb-sub" href="#atlas-shop" data-i18n-attr="title:nav.atlasshop"><span class="ico" aria-hidden="true">💰</span><span class="lbl" data-i18n="nav.atlasshop">Boutique Atlas</span></a>
+        <a class="sb-sub" href="#shop" data-i18n-attr="title:nav.shop"><span class="ico" aria-hidden="true">💎</span><span class="lbl" data-i18n="nav.shop">Boutique</span></a>
+  </nav>
+  <div class="sb-staff" id="sf-group" hidden>
+    <b class="lbl" data-i18n="sf.group">Équipe Atlas</b>
+    <a class="sb-link" id="sf-link-admin" href="#admin" hidden data-i18n-attr="title:sf.admin.title"><span class="ico" aria-hidden="true">🛡️</span><span class="lbl" data-i18n="sf.admin.title">Panel admin</span></a>
+    <a class="sb-link" id="sf-link-owner" href="#owner" hidden data-i18n-attr="title:sf.owner.title"><span class="ico" aria-hidden="true">👑</span><span class="lbl" data-i18n="sf.owner.title">Panel owner</span></a>
+  </div>
+  <button type="button" class="sb-btn" id="st-open" aria-haspopup="dialog" data-i18n-attr="title:st.title"><span class="ico" aria-hidden="true">⚙️</span><span class="lbl" data-i18n="st.title">Paramètres</span></button>
+  <button type="button" class="sb-btn sb-collapse" id="sb-collapse" aria-expanded="true" data-i18n-attr="title:nav.collapse"><span class="ico" aria-hidden="true">◀</span><span class="lbl" data-i18n="nav.collapse">Réduire le menu</span></button>
+</aside>
+<div class="sb-backdrop" id="sb-backdrop" hidden></div>
+<header class="nav" id="top">
+  <div class="wrap">
+    <a class="brand" href="#"><svg aria-hidden="true"><use href="#mark"/></svg><span>Atlas Bot</span></a>
+    <div class="nav-right">
+      <button class="kbtn" id="k-open" type="button" data-i18n-attr="aria-label:kp.open"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><kbd>Ctrl K</kbd></button>
+      <div class="lang" role="group" aria-label="Langue / Language" data-i18n-attr="aria-label:nav.lang">
+        <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <div id="auth-slot"></div>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="sidebar" data-i18n-attr="aria-label:nav.menu"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h16M3 11h16M3 16h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="toast" id="toast" role="alert" hidden></div>
+<div class="toast" id="toast-detail" hidden style="margin-top:6px;font-size:.85rem;word-break:break-all"></div>
+<main id="view-home">
+  <section class="hero"><div class="wrap">
+    <svg class="ghost" aria-hidden="true"><use href="#mark"/></svg>
+    <div class="hero-grid">
+      <div>
+        <h1 data-i18n="h.title">Ton serveur Discord, réglé depuis un seul panneau.</h1>
+        <p class="lead" data-i18n="h.lead">Modération, anti-raid, niveaux, tickets, giveaways, IA… Atlas Bot se configure avec <code>/config</code> sur Discord ou depuis ce site, serveur par serveur.</p>
+        <div class="cta-row">
+          <a class="btn primary big" data-invite href="#" target="_blank" rel="noopener" data-i18n="hero.add">Ajouter à Discord</a>
+          <a class="btn big" href="#" data-login data-i18n="hero.login">Se connecter avec Discord</a>
+        </div>
+        <p class="proof" data-i18n="h.proof">100 commandes, 25 pages de réglages, français et anglais.</p>
+      </div>
+      <div class="win" id="hero-win">
+        <div class="win-bar"><span aria-hidden="true">#</span><b data-i18n="h.win.channel">général</b></div>
+        <div class="win-body" aria-live="off">
+          <div class="msg later" id="hw-user">
+            <div class="av" aria-hidden="true">L</div>
+            <div><div class="who" data-i18n="h.win.user">Léa</div><div class="cmdline"><code>/config</code></div></div>
+          </div>
+          <div class="msg later" id="hw-bot">
+            <div class="av bot" aria-hidden="true"><svg><use href="#mark"/></svg></div>
+            <div style="min-width:0">
+              <div class="who">Atlas Bot <span class="tag">BOT</span></div>
+              <div class="embed"><p class="hw-title" id="hw-title"></p><div class="rows" id="hw-rows"></div></div>
+              <div class="select" id="hw-select" role="group" data-i18n-attr="aria-label:h.win.pick"></div>
+            </div>
+          </div>
+          <div class="typing-line" id="hw-input" aria-hidden="true"><span id="hw-typed"></span><span class="caret"></span></div>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="panel" class="block"><div class="wrap panel-sec">
+    <div class="section-head">
+      <h2 data-i18n="h.panel.title">Le même panneau sur Discord et sur le site</h2>
+      <p data-i18n="h.panel.text">Tout se règle depuis le site, avec les salons et les rôles de ton serveur dans des listes :<ul class="ticks"><li>Configure facilement les modules du bot sur tes serveurs.</li><li>Gère les permissions, les salons et le système d’accueil.</li><li>Consulte tes statistiques et tes avantages VIP.</li><li>Accède directement au support et à tes paramètres.</li></ul>Chaque réglage est celui de <code>/config</code>, et chaque commande du bot peut aussi se lancer depuis l’onglet Actions.</p>
+      <div class="cta-row"><a class="btn primary" href="#dashboard" data-i18n="h.panel.cta">Ouvrir le dashboard</a></div>
+      <p class="hint" data-i18n="h.panel.hint">Aperçu : clique sur une page pour la voir.</p>
+    </div>
+    <div class="dpv" id="dpv"><nav class="dpv-nav" id="dpv-nav" data-i18n-attr="aria-label:h.panel.pages"></nav><div class="dpv-main" id="dpv-main"></div></div>
+  </div></section>
+
+  <section id="features" class="block"><div class="wrap">
+    <div class="section-head"><h2 data-i18n="h.f.title">Tout ce qu’il faut pour ton serveur</h2><p data-i18n="h.f.sub">Chaque module s’active, se désactive et se règle indépendamment, serveur par serveur.</p></div>
+    <div class="bento">
+      <article class="tile hero-tile w2 h2"><svg class="tile-mark" aria-hidden="true"><use href="#mark"/></svg><svg class="gl"><use href="#g-config"/></svg><h3 data-i18n="h.f.config.t">Un seul tableau de bord</h3><p data-i18n="h.f.config.d">23 pages : modules, salons, rôles, messages. Sur Discord avec <code>/config</code>, ou sur le site, avec les mêmes réglages.</p>
+        <div class="pages" aria-hidden="true"><span>Accueil &amp; modules</span><span>Bienvenue</span><span>AutoMod</span><span>Anti-raid</span><span>Niveaux</span><span>Économie</span><span>Tickets</span><span>Giveaways</span><span>Starboard</span><span>Logs</span><span>+13</span></div></article>
+      <article class="tile"><svg class="gl"><use href="#g-mod"/></svg><h3 data-i18n="h.f.mod.t">Modération complète</h3><p data-i18n="h.f.mod.d">Bannissements (même temporaires), exclusions, avertissements, notes privées, historique et sanctions automatiques.</p></article>
+      <article class="tile"><svg class="gl"><use href="#g-raid"/></svg><h3 data-i18n="h.f.auto.t">AutoMod et anti-raid</h3><p data-i18n="h.f.auto.d">Spam, liens, invitations, mots interdits. En cas de raid, le bot sanctionne les arrivants, verrouille le serveur et prévient ton équipe.</p></article>
+      <article class="tile"><svg class="gl"><use href="#g-lvl"/></svg><h3 data-i18n="h.f.lvl.t">Niveaux et récompenses</h3><p data-i18n="h.f.lvl.d">XP en texte et en vocal, classement, rôles de récompense, annonces personnalisées.</p></article>
+      <article class="tile"><svg class="gl"><use href="#g-tix"/></svg><h3 data-i18n="h.f.tix.t">Tickets</h3><p data-i18n="h.f.tix.d">Plusieurs types, prise en charge par le staff, verrouillage, archives.</p></article>
+      <article class="tile w2"><svg class="gl"><use href="#g-ia"/></svg><h3 data-i18n="h.f.ia.t">Un serveur créé par l’IA</h3><p data-i18n="h.f.ia.d">Décris ton projet : <code>/serveur creer-ia</code> propose rôles, salons et règlement, et tu vérifies l’aperçu avant la création. <code>/outils ia-aide</code> répond à tes questions de configuration.</p></article>
+      <article class="tile"><svg class="gl"><use href="#g-gw"/></svg><h3 data-i18n="h.f.gw.t">Giveaways</h3><p data-i18n="h.f.gw.d">Conditions de rôle, de niveau ou d’ancienneté, bonus par rôle, relance du tirage.</p></article>
+      <article class="tile"><svg class="gl"><use href="#g-eco"/></svg><h3 data-i18n="h.f.eco.t">Économie</h3><p data-i18n="h.f.eco.d">Monnaie virtuelle, récompense quotidienne, travail, jeux, boutique de rôles.</p></article>
+      <article class="tile"><svg class="gl"><use href="#g-wel"/></svg><h3 data-i18n="h.f.wel.t">Accueil et vérification</h3><p data-i18n="h.f.wel.d">Messages d’arrivée et de départ, auto-rôles, MP d’accueil, vérification par bouton.</p></article>
+      <article class="tile w2"><svg class="gl"><use href="#g-pub"/></svg><h3 data-i18n="h.f.pub.t">Pubs et bump</h3><p data-i18n="h.f.pub.d">Ton serveur est listé sur le site, et un bouton « Bump » le remonte tout en haut de la liste.</p></article>
+      <article class="tile"><svg class="gl"><use href="#g-fun"/></svg><h3 data-i18n="h.f.fun.t">Communauté et fun</h3><p data-i18n="h.f.fun.d">Sondages, suggestions, starboard, panneaux de rôles, quiz, anniversaires.</p></article>
+    </div>
+  </div></section>
+
+  <section id="home-trophies" class="block tr-home"></section>
+
+  <section id="site-tools" class="block"><div class="wrap">
+    <div class="section-head"><h2 data-i18n="h.t.title">Le site fait plus que régler</h2><p data-i18n="h.t.sub">Quatre outils à utiliser depuis ton navigateur, avec les mêmes permissions Discord que sur ton serveur.</p></div>
+    <div class="tools-grid">
+      <article class="tool-card"><span class="tool-ico" aria-hidden="true">✉️</span><h3 data-i18n="h.t.send.t">Éditeur de message</h3><p data-i18n="h.t.send.d">Compose un embed avec un aperçu en direct, envoie-le tout de suite ou programme-le, et garde tes modèles.</p></article>
+      <article class="tool-card"><span class="tool-ico" aria-hidden="true">📜</span><h3 data-i18n="h.t.jr.t">Journal d'activité</h3><p data-i18n="h.t.jr.d">Sanctions, arrivées, sécurité : 30 jours d'historique avec recherche et filtres, sans jamais garder le contenu des messages supprimés.</p></article>
+      <article class="tool-card"><span class="tool-ico" aria-hidden="true">🎭</span><h3 data-i18n="h.t.rl.t">Rôles temporaires et menus</h3><p data-i18n="h.t.rl.d">Donne un rôle pour une durée et crée des menus où chacun choisit ses rôles, avec des garde-fous contre les rôles dangereux.</p></article>
+      <article class="tool-card"><span class="tool-ico" aria-hidden="true">🌐</span><h3 data-i18n="h.t.pg.t">Page publique du serveur</h3><p data-i18n="h.t.pg.d">Une page à partager avec tes membres et ton bouton « Rejoindre ». Désactivée par défaut : tu choisis ce qui est visible.</p></article>
+    </div>
+    <div class="cta-row"><a class="btn primary" href="#dashboard" data-i18n="h.panel.cta">Ouvrir le dashboard</a></div>
+  </div></section>
+
+  <section id="events-teaser" class="block"><div class="wrap">
+    <div class="section-head"><h2 data-i18n="home.ev.t">Des cartes de pub animées à gagner</h2><p data-i18n="home.ev.d">Halloween, Noël, Saint-Valentin, galaxie, lave… Participe aux évènements et fais briller ta pub.</p></div>
+    <div class="home-cards" id="home-cards"></div>
+    <div class="cta-row" style="margin-top:22px"><a class="btn primary big" href="#events" data-i18n="home.ev.cta">Voir les évènements</a></div>
+  </div></section>
+  <section id="commands" class="block"><div class="wrap">
+    <div class="section-head"><h2 data-i18n="h.c.title">Les commandes, par domaine</h2><p data-i18n="h.c.sub">Un aperçu. <code>/help</code> sur ton serveur donne la liste complète des 100 commandes.</p></div>
+    <div class="explorer">
+      <div class="ex-tabs" id="ex-tabs" role="tablist"></div>
+      <div class="ex-list" id="ex-list" role="tabpanel"></div>
+    </div>
+  </div></section>
+
+  <section id="start" class="block"><div class="wrap">
+    <div class="section-head"><h2 data-i18n="h.s.title">Prêt en trois étapes</h2></div>
+    <div class="steps">
+      <div class="step"><div class="n" aria-hidden="true">1</div><h3 data-i18n="start.s1.t">Ajoute le bot</h3><p data-i18n="start.s1.d">Invite Atlas Bot sur ton serveur et place son rôle assez haut dans la liste des rôles.</p></div>
+      <div class="step"><div class="n" aria-hidden="true">2</div><h3 data-i18n="start.s2.t">Tape /config</h3><p data-i18n="start.s2.d">Choisis une catégorie puis un paramètre : logs, bienvenue, AutoMod, niveaux, tickets…</p></div>
+      <div class="step"><div class="n" aria-hidden="true">3</div><h3 data-i18n="start.s3.t">Profite</h3><p data-i18n="start.s3.d">Chaque changement est enregistré immédiatement et ne concerne que ton serveur.</p></div>
+    </div>
+  </div></section>
+
+  <section id="faq" class="block"><div class="wrap">
+    <div class="section-head"><h2 data-i18n="h.q.title">Questions fréquentes</h2></div>
+    <div class="faq">
+      <details><summary data-i18n="h.q1.q">Atlas Bot est-il gratuit ?</summary><p data-i18n="h.q1.a">Oui, les fonctions du bot sont gratuites. Des avantages VIP optionnels existent dans la boutique.</p></details>
+      <details><summary data-i18n="h.q2.q">Faut-il créer un compte ?</summary><p data-i18n="h.q2.a">Non. Pour utiliser le dashboard, tu te connectes avec Discord : seul ton identité publique (pseudo, avatar) est lue, jamais de mot de passe ni de message.</p></details>
+      <details><summary data-i18n="h.q3.q">Comment bien installer le bot ?</summary><p data-i18n="h.q3.a">Invite-le, puis place son rôle au-dessus des rôles qu'il doit gérer. Il refuse d'agir sur un rôle plus haut que le sien. Ensuite, tape /config.</p></details>
+      <details><summary data-i18n="h.q4.q">Que fait le bot de mes données ?</summary><p data-i18n="h.q4.a">Les réglages sont enregistrés par serveur. Le journal ne garde pas le contenu des messages supprimés ou modifiés, et la page publique reste désactivée tant que tu ne l'actives pas.</p></details>
+      <details><summary data-i18n="h.q5.q">Puis-je tout régler sans le site ?</summary><p data-i18n="h.q5.a">Oui. Chaque réglage existe dans /config sur Discord, et chaque commande reste utilisable sur ton serveur.</p></details>
+      <details><summary data-i18n="h.q6.q">Où trouver de l'aide ?</summary><p data-i18n="h.q6.a">Pose ta question avec /outils ia-aide, ou rejoins le serveur de support depuis le pied de page.</p></details>
+    </div>
+  </div></section>
+
+  <section class="block" style="padding-top:0"><div class="wrap">
+    <div class="cta">
+      <svg class="big-mark" aria-hidden="true"><use href="#mark"/></svg>
+      <div><h2 data-i18n="h.cta.title">Ajoute Atlas Bot à ton serveur</h2><p data-i18n="h.cta.text">Gratuit, sans compte à créer. Tu règles tout ensuite avec <code>/config</code> ou depuis le dashboard.</p></div>
+      <a class="btn primary big" data-invite href="#" target="_blank" rel="noopener" data-i18n="hero.add">Ajouter à Discord</a>
+    </div>
+  </div></section>
+</main>
+
+
+<main class="center-page" id="view-account" hidden><div class="wrap" style="display:grid;place-items:center">
+  <div class="panel" id="panel-user" hidden>
+    <img class="avatar" id="u-avatar" alt="" width="96" height="96">
+    <h1 id="u-hello" data-i18n="acc.hello" data-name=""></h1>
+    <p class="muted" data-i18n="acc.connected">Tu es connecté avec Discord.</p>
+    <dl class="kv">
+      <div><dt data-i18n="acc.username">Pseudo</dt><dd id="u-username"></dd></div>
+      <div><dt data-i18n="acc.id">Identifiant Discord</dt><dd id="u-id"></dd></div>
+      <div><dt data-i18n="acc.soon.t">Ton grade</dt><dd id="u-premium"></dd></div>
+      <div id="u-staff-row" hidden><dt data-i18n="sf.diag.t">Panels staff</dt><dd id="u-staffdiag"></dd></div>
+    </dl>
+    <div class="note"><p data-i18n="acc.soon.d">Retrouve tes serveurs dans le Dashboard et tes avantages dans la Boutique.</p></div>
+    <div class="cta-row" style="justify-content:center"><a class="btn primary" href="#dashboard" data-i18n="acc.dash">Ouvrir le dashboard</a><a class="btn" href="#shop" data-i18n="nav.shop">Boutique</a><button class="btn" type="button" id="logout-btn" data-i18n="acc.logout">Se déconnecter</button></div>
+  </div>
+  <div class="panel" id="panel-guest" hidden>
+    <h1 data-i18n="acc.need.t">Connexion requise</h1>
+    <p class="muted" data-i18n="acc.need.d">Connecte-toi avec Discord pour voir ton compte.</p>
+    <a class="btn primary big" href="#" data-login data-i18n="hero.login">Se connecter avec Discord</a>
+    <p style="margin-top:16px"><a href="#" data-i18n="acc.home">Retour à l’accueil</a></p>
+  </div>
+</div></main>
+<main class="page" id="view-shop" hidden><div class="wrap">
+  <div class="section-head"><h1 data-i18n="shop.title">Boutique Atlas</h1><p data-i18n="shop.sub">Soutiens Atlas Bot et débloque des avantages dans le bot et sur le serveur Discord officiel.</p></div>
+  <div class="current" id="shop-current" hidden></div>
+  <div class="tiers" id="shop-grid"></div>
+</div></main>
+<main class="page" id="view-cat" hidden><div class="wrap">
+  <div id="cat-root"></div>
+</div></main>
+<main class="page" id="view-trophies" hidden><div class="wrap">
+  <div class="section-head"><h1 data-i18n="tr.title">Badges & trophées</h1><p data-i18n="tr.sub">Les succès que ton serveur débloque tout seul en grandissant.</p></div>
+  <div id="trophies-root"></div>
+</div></main>
+<main class="page" id="view-partners" hidden><div class="wrap">
+  <div class="section-head"><h1 data-i18n="pt.title">Partenariats</h1><p data-i18n="pt.sub">Les serveurs, sites et projets avec lesquels Atlas Bot travaille.</p></div>
+  <div id="partners-root"></div>
+</div></main>
+<main class="page" id="view-news" hidden><div class="wrap">
+  <div class="section-head"><h1 data-i18n="news.title">Nouveautés</h1><p data-i18n="news.sub">Les dernières mises à jour et annonces d’Atlas Bot.</p></div>
+  <div class="news-list" id="news-list"></div>
+</div></main>
+<main class="page" id="view-atlasshop" hidden><div class="wrap">
+  <div class="section-head"><h1 data-i18n="as.title">Boutique Atlas</h1><p data-i18n="as.sub">Les serveurs gagnent des Atlas coins en restant actifs, puis les dépensent ici : boosts, mise à l'honneur, badges. Les cartes de pub ne s'achètent pas : elles se gagnent pendant les évènements.</p></div>
+  <div id="atlasshop-root"></div>
+</div></main>
+<main class="page" id="view-owner" hidden><div class="wrap">
+  <div class="section-head"><h1 data-i18n="sf.owner.title">Panel owner</h1><p data-i18n="sf.owner.sub">Tout gérer : serveurs, Atlas coins, grades, cartes, thème du site, évènements et équipe.</p></div>
+  <div id="owner-root"></div>
+</div></main>
+<main class="page" id="view-admin" hidden><div class="wrap">
+  <div class="section-head"><h1 data-i18n="sf.admin.title">Panel admin</h1><p data-i18n="sf.admin.sub">Statistiques du bot, liste des serveurs et modération des pubs.</p></div>
+  <div id="admin-root"></div>
+</div></main>
+<main class="page" id="view-events" hidden><div class="wrap">
+  <div class="section-head"><h1 data-i18n="evp.title">Évènements</h1><p data-i18n="evp.sub">Fais gagner de l'XP à ton serveur, débloque le tirage au sort et remporte des cartes de pub animées.</p></div>
+  <div id="events-root"></div>
+</div></main>
+<main class="page" id="view-guide" hidden><div class="wrap">
+  <div class="section-head"><h1 data-i18n="gd.title">Configurer Atlas Bot, pas à pas</h1><p id="guide-sub"></p></div>
+  <div id="guide-root"></div>
+</div></main>
+<main class="page" id="view-pub" hidden><div class="wrap">
+  <div class="section-head"><h1 data-i18n="pub.title">Pub des serveurs</h1><p data-i18n="pub.sub">Des serveurs Discord qui utilisent Atlas Bot. Les plus récemment « bumpés » sont en haut.</p></div>
+  <div class="note" style="margin-bottom:18px"><p data-i18n="pub.how">Ton serveur peut apparaître ici : un gestionnaire fait <code>/pub set</code> sur Discord, puis <code>/bump</code> régulièrement pour remonter dans la liste.</p></div>
+  <div class="pub-tools"><input type="search" id="pub-q" maxlength="60" data-i18n-attr="placeholder:pub.search" aria-label="Search"><div class="chips" id="pub-cats" role="group"></div></div>
+  <div class="pub-partners" id="pub-partners" hidden></div>
+  <div class="pub-grid" id="pub-grid"></div>
+</div></main>
+<main class="page" id="view-server" hidden><div class="wrap"><div id="srv-root"></div></div></main>
+<main class="page" id="view-dashboard" hidden><div class="wrap" id="dash-root"></div></main>
+<dialog id="buy-dialog"><div id="buy-body"></div></dialog>
+<dialog id="confirm-dialog"><div>
+  <p id="confirm-text"></p>
+  <div class="dialog-actions"><button class="btn" type="button" data-close="confirm-dialog" data-i18n="dash.cancel">Annuler</button><button class="btn primary" type="button" id="confirm-yes" data-i18n="dash.confirm">Confirmer</button></div>
+</div></dialog>
+<footer><div class="wrap foot">
+  <div><a class="brand" href="#"><svg aria-hidden="true"><use href="#mark"/></svg><span>Atlas Bot</span></a><p data-i18n="h.foot.tag">Le bot Discord qui règle tout ton serveur.</p><a class="topgg" href="https://top.gg/bot/1532429036293197925" target="_blank" rel="noopener" title="Atlas Bot sur top.gg"><img src="https://top.gg/api/widget/1532429036293197925.svg" alt="Atlas Bot sur top.gg" width="300" height="130" loading="lazy" decoding="async"></a></div>
+  <nav aria-label="Navigation"><b data-i18n="h.foot.nav">Navigation</b><a href="#features" data-i18n="nav.features">Fonctionnalités</a><a href="#commands" data-i18n="nav.commands">Commandes</a><a href="#dashboard" data-i18n="nav.dashboard">Dashboard</a><a href="#guide" data-i18n="nav.guide">Guide</a><a href="#news" data-i18n="nav.news">Nouveautés</a><a href="#events" data-i18n="nav.events">Évènements</a></nav>
+  <nav aria-label="Atlas"><b>Atlas Bot</b><a href="#pub" data-i18n="nav.pub">Pub</a><a href="#atlas-shop" data-i18n="nav.atlasshop">Boutique Atlas</a><a href="#shop" data-i18n="nav.shop">Boutique</a><a data-invite href="#" target="_blank" rel="noopener" data-i18n="hero.add">Ajouter à Discord</a><a data-support href="#" target="_blank" rel="noopener" data-i18n="h.foot.support">Serveur de support</a></nav>
+  <div class="foot-legal"><span>© <span id="year"></span> <span data-i18n="footer.rights">Atlas Bot. Non affilié à Discord Inc.</span></span><span data-i18n="footer.privacy">Connexion : seule ton identité Discord publique (pseudo, avatar) est lue. Aucun mot de passe, aucun message.</span><span class="muted small" id="build-stamp" title="Si ce numéro ne change pas après une mise à jour, les fichiers en ligne sont anciens">v2.47 · build 1792875586</span></div>
+</div></footer>
+<script src="js/config.js"></script>
+<script src="js/i18n.js?v=1792875586"></script>
+<script src="js/app.js?v=1792875586"></script>
+<script src="js/fx.js?v=1792875586"></script>
+<script src="js/embededitor.js?v=1792875586"></script>
+<script src="js/rolestool.js?v=1792875586"></script>
+<script src="js/commtools.js?v=1792875586"></script>
+<script src="js/modtool.js?v=1792875586"></script>
+<script src="js/lbpage.js?v=1792875586"></script>
+<script src="js/cardspage.js?v=1792875586"></script>
+<script src="js/themes.js?v=1792875586"></script>
+<script src="js/atlasshop.js?v=1792875586"></script>
+<script src="js/staffpanel.js?v=1792875586"></script>
+<script src="js/staffplus.js?v=1792875586"></script>
+<script src="js/settings.js?v=1792875586"></script>
+<script src="js/partnerspage.js?v=1792875586"></script>
+<script src="js/catpages.js?v=1792875586"></script>
+<script src="js/trophiespage.js?v=1792875586"></script>
+<script src="js/sidebar.js?v=1792875586"></script>
+<script src="js/guidepage.js?v=1792875586"></script>
+<script src="js/tools.js?v=1792875586"></script>
+<script src="js/home.js?v=1792875586"></script>
+<script src="js/pwa.js?v=1792875586"></script>
+</body>
+</html>
