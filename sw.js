@@ -2,9 +2,9 @@
  * Règle d'or : on ne touche QU'AU site lui-même (même origine). L'API du bot, les Gists, GitHub, top.gg et Discord ne passent jamais par ici :
  * aucune donnée de serveur, aucun jeton, aucun statut n'est mis en cache.
  * Stratégie « réseau d'abord » : le site à jour s'affiche toujours quand il y a du réseau ; la copie sert seulement hors ligne. */
-const VERSION = '1792875586';
+const VERSION = '1793051919';
 const CACHE = 'atlas-' + VERSION;
-const SHELL = ["./", "manifest.webmanifest", "assets/favicon.svg", "css/style.css?v=1792875586", "js/app.js?v=1792875586", "js/atlasshop.js?v=1792875586", "js/cardspage.js?v=1792875586", "js/catpages.js?v=1792875586", "js/commtools.js?v=1792875586", "js/config.js", "js/embededitor.js?v=1792875586", "js/fx.js?v=1792875586", "js/guidepage.js?v=1792875586", "js/home.js?v=1792875586", "js/i18n.js?v=1792875586", "js/lbpage.js?v=1792875586", "js/modtool.js?v=1792875586", "js/partnerspage.js?v=1792875586", "js/pwa.js?v=1792875586", "js/rolestool.js?v=1792875586", "js/settings.js?v=1792875586", "js/sidebar.js?v=1792875586", "js/staffpanel.js?v=1792875586", "js/staffplus.js?v=1792875586", "js/themes.js?v=1792875586", "js/tools.js?v=1792875586", "js/trophiespage.js?v=1792875586"];
+const SHELL = ["./", "manifest.webmanifest", "assets/favicon.svg", "css/style.css?v=1793051919", "js/app.js?v=1793051919", "js/atlasshop.js?v=1793051919", "js/cardspage.js?v=1793051919", "js/catpages.js?v=1793051919", "js/commtools.js?v=1793051919", "js/config.js", "js/embededitor.js?v=1793051919", "js/fx.js?v=1793051919", "js/guidepage.js?v=1793051919", "js/home.js?v=1793051919", "js/i18n.js?v=1793051919", "js/lbpage.js?v=1793051919", "js/modtool.js?v=1793051919", "js/partnerspage.js?v=1793051919", "js/pwa.js?v=1793051919", "js/rolestool.js?v=1793051919", "js/settings.js?v=1793051919", "js/sidebar.js?v=1793051919", "js/staffpanel.js?v=1793051919", "js/staffplus.js?v=1793051919", "js/themes.js?v=1793051919", "js/tools.js?v=1793051919", "js/trophiespage.js?v=1793051919"];
 
 self.addEventListener('install', (event) => {
   self.skipWaiting();
